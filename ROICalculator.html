@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script type="text/javascript" src="controller.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+</head>
+<body>
+    <h2>Current Providers</h2>
+    <table>
+        <tr>
+            <td>
+                <label>DMS Provider</label>
+            </td>
+            <td>
+                <select id="dmsProvider">
+                    <option value="acs">ACS</option>
+                    <option value="cdk">CDK</option>
+                    <option value="arkona">Arkona</option>
+                    <option value="automate">Automate</option>
+                    <option value="dblt">DBLT</option>
+                    <option value="pbs">PBS</option>
+                    <option value="r&r">R&R</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>N-SWS Vendor</label>
+            </td>
+            <td>
+                <select id="nswsVendor">
+                    <option value="dealerfx">DealerFX</option>
+                    <option value="dealerlogix">DealerLogix</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Total Redundant Software Monthly Fee Savings</label>
+            </td>
+            <td>
+                <input type="text" id="totalRedundantSoftwareMonthlyFeeSavings"/>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Store Information</h2>
+    <table>
+        <tr>
+            <td>
+                <label>ROs per Month</label>
+            </td>
+            <td>
+                <input type="text" id="rosPerMonth" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>CPROs per Month</label>
+            </td>
+            <td>
+                <input type="text" id="cprosPerMonth" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Average Dollars per CPRO</label>
+            </td>
+            <td>
+                <input type="text" id="avgDollarsPerCPRO" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Store Margin</label>
+            </td>
+            <td>
+                <input type="text" id="storeMargin" />
+            </td>
+        </tr>
+    </table>
+    <h2>Personnel</h2>
+    <table>
+        <tr>
+            <td>
+                <label>Service Advisors During Peak Hours</label>
+            </td>
+            <td>
+                <input type="text" id="serviceAdvisorsDuringPeakHours" />
+            </td>
+        </tr>
+    </table>
+    <h2>Equipment Status</h2>
+    <table>
+        <tr>
+            <td>
+                <label>Current # of Service Advisor</label>
+            </td>
+            <td>
+                <input type="text" id="currentNumberOfServiceAdvisor" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>MPI Service Bays without</label>
+            </td>
+            <td>
+                <input type="text" id="mpiServiceBaysWithout" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="calcRoi" type="button" onclick="roi.calculateROI()">Calculate ROI</button>
+            </td>
+        </tr>
+    </table>
+    <!--RESULTS-->
+    <h2>Program Pricing Summary</h2>
+    <table>
+        <tr>
+            <td valign="top">
+                <h3>ONE-TIME</h3>
+                <table>
+                    <tr>
+                        <td>
+                            <label>SetupFees $ </label>
+                            <small>(Includes Setup, DMS, Hardware fees)</small>
+                        </td>
+                        <td>
+                            <input type="text"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <h3>MONTHLY</h3>
+                <table>
+                    <tr>
+                        <td>
+                            <label>Program Subscription Fees $ </label>
+                            <small>(Includes DMS fees)</small>
+                        </td>
+                        <td>
+                            <input type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Redundant System Fee Savings $ </label>
+                       </td>
+                        <td>
+                            <input type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Potential Discount $ </label>
+                        </td>
+                        <td>
+                            <input type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Total $ </label>
+                        </td>
+                        <td>
+                            <input type="text" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <h2>Total NCAR-SWS Business Impact</h2>
+    <table>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <label>Average</label>
+                <small>(Tablet Usage 80%) (MPI Usage 80%)</small>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Estimated Revenue Increase per Month</label>
+            </td>
+            <td>
+                <input id="estimatedRevenueIncreasePerMonth" readonly/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Tablet Lift per RO</label>
+            </td>
+            <td>
+                <input type="text" id="tabletLiftPerRO" readonly/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Break Even RO Volume</label>
+            </td>
+            <td>
+                <input type="text" id="breakEvenROVolume" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Return On Investment</label>
+            </td>
+            <td>
+                <input type="text" />
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
